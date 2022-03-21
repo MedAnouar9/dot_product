@@ -1,0 +1,36 @@
+ALGORITHM produit_scalaire
+VAR
+    v : ARRAY_OF float[3];
+    u : ARRAY_OF float[3]; 
+BEGIN
+    saisie(v , u);
+    IF (dot_poduct=0) THEN
+        writeln("les deux vecteurs sont orthogonaux");
+    ELSE
+        writeln("le produit scalaire des deux vecteur=",ps);
+    END_IF
+END
+
+PROCEDURE saisie(v , u)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 1 TO 3 STEP 1  DO
+        write("donnez les cordonnés de v");
+        read(v[i]);
+        write("donnez les cordonné de u");
+        read(u[i]);
+    END_FOR
+END
+
+PROCEDURE dot_product(v , u , ps) : float
+VAR
+    p:INTEGER:=0;
+    ps:INTEGER:=0;
+BEGIN
+    FOR i FROM 1 TO 3 STEP 1  DO
+            p=(v[i]*u[i]);
+            ps=ps+p;
+    END_FOR
+    
+END

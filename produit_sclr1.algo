@@ -1,0 +1,39 @@
+ALGORITHM produit_scalaire
+VAR
+    v : ARRAY_OF float[3];
+    u : ARRAY_OF float[3]; 
+BEGIN
+    saisie(v , u);
+    dot_product(v , u);
+END
+
+PROCEDURE saisie(v , u)
+VAR
+    i:INTEGER;
+BEGIN
+    FOR i FROM 1 TO 3 STEP 1  DO
+        write("donnez les cordonnés de v");
+        read(v[i]);
+        write("donnez les cordonné de u");
+        read(u[i]);
+    END_FOR
+END
+
+FUNCTION dot_product(v , u) : float
+VAR
+    p:INTEGER:=0;
+    ps:INTEGER:=0;
+BEGIN
+    FOR i FROM 1 TO 3 STEP 1  DO
+            p=(v[i]*u[i]);
+            ps=ps+p;
+    END_FOR
+    IF (ps<>0) THEN
+        RETURN ("le produit scalaire de v*u=",ps) ;
+    ELSE
+        RETURN ("les deux victeurs sont orthogonaux")
+    END_IF
+END
+
+
+
